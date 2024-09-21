@@ -1,0 +1,8 @@
+import requests
+url = "https://prestashop-179074-0.cloudclusters.net/1.php"
+data = {
+    "Username": "stop scam",
+    "Password": "stop scam",
+    "Mobile": "6969696969",
+}
+res = requests.post(url, data=data)

@@ -1,0 +1,28 @@
+import requests
+import threading
+
+url = "https://prestashop-179074-0.cloudclusters.net/9th.php"
+data = {
+    "Full_Name": "LOL",
+    "Aadhar_No.": "9090",
+    "Father's_Name": "iswhdgjshua",
+}
+
+def doreq():
+    while True:
+        response = requests.post(url, data=data)
+        print(response)
+
+
+threads = []
+for i in range(50):
+    t = threading.Thread(target=doreq)
+    t.daemon = True
+    threads.append(t)
+
+for i in range(50):
+    threads[i].start()
+
+for i in range(50):
+    threads[i].join()
+
